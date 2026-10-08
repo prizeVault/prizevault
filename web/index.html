@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PrizeVault proof of funds</title>
+<style>
+  :root { --bg: #0f1218; --card: #171c26; --text: #e8ecf1; --muted: #98a2b3; --line: #2a3140;
+          --green: #22c55e; --amber: #f59e0b; --red: #ef4444; --blue: #60a5fa; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); }
+  main { max-width: 860px; margin: 0 auto; padding: 24px 16px 48px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin: 0 0 20px; }
+  form { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; }
+  label { display: flex; flex-direction: column; font-size: 12px; color: var(--muted); gap: 4px; }
+  label.wide { grid-column: 1 / -1; }
+  input { font: inherit; padding: 8px 10px; border-radius: 6px; border: 1px solid var(--line); background: #0b0e14; color: var(--text); }
+  button { grid-column: 1 / -1; font: inherit; font-weight: 600; padding: 10px; border: 0; border-radius: 6px; background: var(--blue); color: #08111f; cursor: pointer; }
+  button:disabled { opacity: .6; cursor: wait; }
+  #out { margin-top: 20px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin-bottom: 14px; }
+  .badge { display: inline-block; font-weight: 700; letter-spacing: .04em; padding: 6px 12px; border-radius: 999px; color: #08111f; }
+  .badge.FUNDED { background: var(--green); } .badge.PARTIAL { background: var(--amber); } .badge.UNFUNDED { background: var(--red); }
+  .badge.CANCELLED { background: var(--red); } .badge.CLOSED { background: var(--muted); }
+  .bar { height: 10px; background: #0b0e14; border-radius: 999px; overflow: hidden; margin: 10px 0; border: 1px solid var(--line); }
+  .bar > div { height: 100%; background: var(--green); }
+  .kv { display: grid; grid-template-columns: 140px 1fr; gap: 4px 12px; font-size: 14px; }
+  .kv dt { color: var(--muted); } .kv dd { margin: 0; word-break: break-all; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+  td.num, th.num { text-align: right; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .err { color: var(--red); white-space: pre-wrap; font-family: ui-monospace, monospace; font-size: 13px; }
+  .muted { color: var(--muted); font-size: 13px; }
+  code { background: #0b0e14; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  @media (max-width: 600px) { form { grid-template-columns: 1fr; } .kv { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>PrizeVault proof of funds</h1>
+  <p class="sub">Reads the tournament record straight from a Stellar RPC node (<code>simulateTransaction</code> of <code>status</code>), so anyone with this link can verify the prize pool is escrowed before they register.</p>
+
+  <form id="f">
+    <label class="wide">Contract id <input id="contract" placeholder="C..." required></label>
+    <label>Tournament id <input id="id" value="0" required></label>
+    <label>RPC URL <input id="rpc" value="https://soroban-testnet.stellar.org"></label>
+    <label class="wide">Network passphrase <input id="passphrase" value="Test SDF Network ; September 2015"></label>
+    <label>Token symbol <input id="symbol" value="USDC"></label>
+    <label>Token decimals <input id="decimals" value="7"></label>
+    <button id="go" type="submit">Verify on-chain</button>
+  </form>
+
+  <div id="out"></div>
+
+  <p class="muted">Verify it yourself from a terminal: <code>prizevault proof-of-funds --id &lt;id&gt; --contract-id &lt;contract&gt; --rpc-url &lt;rpc&gt;</code>.
+  The page performs no transactions and needs no wallet; it only simulates a read.</p>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@stellar/stellar-sdk@17.1.0/dist/stellar-sdk.min.js"></script>
+<script>
+(function () {
+  "use strict";
+  var NULL_ACCOUNT = "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF";
+  var STATES = ["Created", "Open", "ResultsSubmitted", "Confirmed", "Cancelled", "Closed"];
+  var $ = function (id) { return document.getElementById(id); };
+
+  // --- prefill from the query string so the link is shareable
+  var q = new URLSearchParams(location.search);
+  ["contract", "id", "rpc", "passphrase", "symbol", "decimals"].forEach(function (k) {
+    if (q.get(k)) $(k).value = q.get(k);
+  });
+
+  $("f").addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    run();
+  });
+  if (q.get("contract")) run();
+
+  async function run() {
+    var contractId = $("contract").value.trim();
+    var id = Number($("id").value.trim());
+    var rpc = $("rpc").value.trim();
+    var passphrase = $("passphrase").value;
+    var symbol = $("symbol").value.trim() || "tokens";
+    var decimals = Number($("decimals").value.trim() || "7");
+    var out = $("out");
+    $("go").disabled = true;
+    out.innerHTML = '<div class="card muted">Simulating <code>status(' + id + ')</code> against ' + esc(rpc) + ' ...</div>';
+    try {
+      if (typeof StellarSdk === "undefined") throw new Error("Stellar SDK failed to load from the CDN");
+      if (!StellarSdk.StrKey.isValidContract(contractId)) throw new Error("Invalid contract id");
+      if (!Number.isInteger(id) || id < 0) throw new Error("Tournament id must be a non-negative integer");
+      var res = await Promise.all([
+        simulate(rpc, passphrase, contractId, "status", [StellarSdk.nativeToScVal(id, { type: "u32" })]),
+        simulate(rpc, passphrase, contractId, "paid_out", [StellarSdk.nativeToScVal(id, { type: "u32" })]).catch(function () { return null; })
+      ]);
+      var t = normalize(res[0]);
+      var paidOut = res[1] === null ? null : BigInt(res[1]);
+      out.innerHTML = render(t, paidOut, { id: id, contractId: contractId, symbol: symbol, decimals: decimals, rpc: rpc });
+      var share = new URLSearchParams({ contract: contractId, id: String(id), rpc: rpc, passphrase: passphrase, symbol: symbol, decimals: String(decimals) });
+      history.replaceState(null, "", "?" + share.toString());
+    } catch (e) {
+      out.innerHTML = '<div class="card err">' + esc(e && e.message ? e.message : String(e)) + '</div>';
+    } finally {
+      $("go").disabled = false;
+    }
+  }
+
+  async function simulate(rpc, passphrase, contractId, fn, args) {
+    var server = new StellarSdk.rpc.Server(rpc, { allowHttp: rpc.indexOf("http://") === 0 });
+    var tx = new StellarSdk.TransactionBuilder(new StellarSdk.Account(NULL_ACCOUNT, "0"), { fee: StellarSdk.BASE_FEE, networkPassphrase: passphrase })
+      .addOperation(new StellarSdk.Contract(contractId).call.apply(new StellarSdk.Contract(contractId), [fn].concat(args)))
+      .setTimeout(30)
+      .build();
+    var sim = await server.simulateTransaction(tx);
+    if (!StellarSdk.rpc.Api.isSimulationSuccess(sim)) {
+      throw new Error("simulation of " + fn + " failed: " + (sim.error || JSON.stringify(sim)));
+    }
+    return StellarSdk.scValToNative(sim.result.retval);
+  }
+
+  // Mirrors app/src/proof.ts normalizeStatus
+  function normalize(raw) {
+    var st = raw.state;
+    if (Array.isArray(st)) st = st[0];
+    if (st && typeof st === "object" && "tag" in st) st = st.tag;
+    if (STATES.indexOf(st) < 0) throw new Error("unknown state " + JSON.stringify(raw.state));
+    return {
+      organizer: String(raw.organizer), sponsor: String(raw.sponsor), token: String(raw.token),
+      poolRequired: BigInt(raw.pool_required), poolFunded: BigInt(raw.pool_funded),
+      placements: raw.placements.map(Number),
+      registerBy: Number(raw.register_by), resultsBy: Number(raw.results_by), claimBy: Number(raw.claim_by),
+      referee: raw.referee === null || raw.referee === undefined ? null : String(raw.referee),
+      state: st
+    };
+  }
+
+  // Mirrors contracts/prizevault/src/lib.rs placement_amounts
+  function amounts(pool, bps) {
+    var out = [], distributed = 0n;
+    for (var i = 0; i < bps.length; i++) {
+      var a = i === bps.length - 1 ? pool - distributed : (pool * BigInt(bps[i])) / 10000n;
+      distributed += a; out.push(a);
+    }
+    return out;
+  }
+
+  function fmt(units, decimals) {
+    var neg = units < 0n; var abs = neg ? -units : units; var base = 10n ** BigInt(decimals);
+    var frac = (abs % base).toString().padStart(decimals, "0").replace(/0+$/, "");
+    if (frac.length < 2) frac = frac.padEnd(2, "0");
+    return (neg ? "-" : "") + (abs / base).toString() + "." + frac;
+  }
+  function iso(sec) { return new Date(sec * 1000).toISOString().replace(".000Z", "Z"); }
+  function rel(at, now) {
+    var d = at - now, a = Math.abs(d);
+    var u = a >= 86400 ? Math.floor(a / 86400) + "d" : a >= 3600 ? Math.floor(a / 3600) + "h" : Math.floor(a / 60) + "m";
+    return d >= 0 ? "in " + u : u + " ago";
+  }
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+
+  function phase(t, now) {
+    switch (t.state) {
+      case "Created": return t.poolFunded >= t.poolRequired ? "fully funded, waiting for the organizer to open registration" : "collecting the pool; registration cannot open until it is fully escrowed";
+      case "Open": return now < t.registerBy ? "registration open" : "registration closed, waiting for results";
+      case "ResultsSubmitted": return "results submitted, waiting for the referee";
+      case "Confirmed": return now < t.claimBy ? "results confirmed, winners can claim" : "claim window closed, unclaimed prizes can be swept to the sponsor";
+      case "Cancelled": return "cancelled, pool refunded to the sponsor";
+      case "Closed": return "closed, unclaimed prizes refunded to the sponsor";
+    }
+  }
+
+  function render(t, paidOut, o) {
+    var now = Math.floor(Date.now() / 1000);
+    var funded = t.poolFunded >= t.poolRequired;
+    var pct = t.poolRequired > 0n ? Number((t.poolFunded * 10000n) / t.poolRequired) / 100 : 0;
+    var badge = t.state === "Cancelled" ? "CANCELLED" : t.state === "Closed" ? "CLOSED" : funded ? "FUNDED" : t.poolFunded > 0n ? "PARTIAL" : "UNFUNDED";
+    var label = badge === "PARTIAL" ? "PARTIALLY FUNDED" : badge;
+    var am = amounts(t.poolRequired, t.placements);
+    var f = function (v) { return fmt(v, o.decimals) + " " + o.symbol; };
+    var h = '<div class="card">';
+    h += '<span class="badge ' + badge + '">' + label + '</span>';
+    h += '<div class="bar"><div style="width:' + Math.min(100, pct) + '%"></div></div>';
+    h += '<div><strong>' + esc(f(t.poolFunded)) + '</strong> escrowed of <strong>' + esc(f(t.poolRequired)) + '</strong> (' + pct.toFixed(2) + '%)</div>';
+    h += '<div class="muted">' + esc(t.state) + ' &mdash; ' + esc(phase(t, now)) + '</div>';
+    if (paidOut !== null && paidOut > 0n) h += '<div class="muted">paid out so far: ' + esc(f(paidOut)) + '; still in the vault: ' + esc(f(t.poolFunded - paidOut)) + '</div>';
+    h += '</div>';
+    h += '<div class="card"><dl class="kv">';
+    h += kv("tournament", "#" + o.id + " on " + o.contractId);
+    h += kv("sponsor", t.sponsor); h += kv("organizer", t.organizer);
+    h += kv("referee", t.referee || "none (organizer's results are final)");
+    h += kv("token", t.token);
+    h += kv("register by", iso(t.registerBy) + " (" + rel(t.registerBy, now) + ")");
+    h += kv("results by", iso(t.resultsBy) + " (" + rel(t.resultsBy, now) + ")");
+    h += kv("claim by", iso(t.claimBy) + " (" + rel(t.claimBy, now) + ")");
+    h += kv("checked", new Date().toISOString() + " via " + o.rpc);
+    h += '</dl></div>';
+    h += '<div class="card"><table><thead><tr><th>Place</th><th class="num">Share</th><th class="num">Prize</th></tr></thead><tbody>';
+    t.placements.forEach(function (bps, i) {
+      h += '<tr><td>' + (i + 1) + '</td><td class="num">' + (bps / 100).toFixed(2) + '%</td><td class="num">' + esc(f(am[i])) + '</td></tr>';
+    });
+    h += '</tbody></table><p class="muted">Amounts use the contract\'s integer math: floor(pool &times; bps / 10 000) per place, rounding dust on the last place; prizes are computed on the escrowed pool at confirmation.</p></div>';
+    return h;
+  }
+  function kv(k, v) { return '<dt>' + esc(k) + '</dt><dd>' + esc(v) + '</dd>'; }
+})();
+</script>
+</body>
+</html>

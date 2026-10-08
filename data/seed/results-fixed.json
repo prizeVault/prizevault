@@ -1,0 +1,104 @@
+{
+  "tournament": "Autumn Invitational 2026 — Open Bracket",
+  "exported_from": "battlefy",
+  "exported_at": "2026-10-05T22:03:41Z",
+  "note": "corrected export",
+  "ranking": [
+    {
+      "place": 1,
+      "gamertag": "xXShadowStrikeXx",
+      "address": "GBF3R2AD6CVMLUM7WZ37BIPHEWU6RSHE5HZX3Y4LAU6I3ILMLCJ3H35G",
+      "seat": 0
+    },
+    {
+      "place": 2,
+      "gamertag": "TTV_Blitzen",
+      "address": "GDV7JC7OGVQEKVKY2N7PBFH6LRMC6MAGOHSKYXUKG5AIKPVHVJGLQ3IB",
+      "seat": 3
+    },
+    {
+      "place": 3,
+      "gamertag": "Vortex.exe",
+      "address": "GB2CBOTW2Y3UUOHFLOIIAI4QBWMTCB3MPZVRHAGZ4Q7JY5I4YPO6FV6Z",
+      "seat": 6
+    },
+    {
+      "place": 4,
+      "gamertag": "ZeroCool",
+      "address": "GDI5ZW5HFGDILORTRCXZVF4UR5UYOPJWDZAHR74AXXMQARRS2YN5CVGZ",
+      "seat": 9
+    },
+    {
+      "place": 5,
+      "gamertag": "Wraith",
+      "address": "GC6WGYXQYCWK2SSTTQWWUG75A4NVBL5DEBZOW3DR3KMV4I3TT46ANQZN",
+      "seat": 12
+    },
+    {
+      "place": 6,
+      "gamertag": "hollow_knight",
+      "address": "GD6VN3GNZLZDOOEYGCKF7G7WM4H3S4FP6JYHJM5ELOS7ZP4XNXIIPAEZ",
+      "seat": 15
+    },
+    {
+      "place": 7,
+      "gamertag": "byte_me",
+      "address": "GBELYVFQTN2USZSONQFV6XQTW6A45EQEACAGTIBGDZY4MS2CBCKQKLIL",
+      "seat": 18
+    },
+    {
+      "place": 8,
+      "gamertag": "Frostbite",
+      "address": "GAH7OENB6FPKB7ADF3KQMHRKNJGYJ7WBVHRHFS2YD7YJVS4XLGSBFSQS",
+      "seat": 21
+    },
+    {
+      "place": 9,
+      "gamertag": "MrRobot",
+      "address": "GBIA2FEHQ57HPF6T7KIA5OTC3SAA6MYAJIJFQZPRXV4M2ATDZCZFTPEJ",
+      "seat": 24
+    },
+    {
+      "place": 10,
+      "gamertag": "Tempest",
+      "address": "GA3ZEULT2TKFMDWMJTJGEJLKXJJNA2FNHQWTJDHIR23FV7UK34TUOPQJ",
+      "seat": 27
+    },
+    {
+      "place": 11,
+      "gamertag": "Bl4ze",
+      "address": "GD7MIJCBZ72K7ZV5ZQB5OFFX5L6GOIMSN3OGBQ4QQZCJESP6E24E2XJF",
+      "seat": 30
+    },
+    {
+      "place": 12,
+      "gamertag": "Aria",
+      "address": "GASEC2UVSYG6UULF2NGWDXQN65UUUKH62NEQN55URTXOIR6BD7KW5IKQ",
+      "seat": 33
+    },
+    {
+      "place": 13,
+      "gamertag": "Marauder",
+      "address": "GBYGMUB5W4N2AEQKFLKFCWSBQSY3EJ6HKTSI6YZZLQCJHQ2WJV43P7IM",
+      "seat": 36
+    },
+    {
+      "place": 14,
+      "gamertag": "Ghost",
+      "address": "GA3JYY723CMVK5WVHEODCWHRG43HHEQGHXHPTDW3Y6J2HCNTAQA42EIO",
+      "seat": 39
+    },
+    {
+      "place": 15,
+      "gamertag": "Kraken",
+      "address": "GCIZTMNUGWH5V366MKG6HJPGFF2V4ZDG3WU6JQWDQ4ZQQC5RENFPRJTI",
+      "seat": 42
+    },
+    {
+      "place": 16,
+      "gamertag": "Mango",
+      "address": "GB4JZVATIVLYL354WN7RV3SIYSXXYZLFQYEKKQV377XJU3TGXLBQHCGZ",
+      "seat": 45
+    }
+  ]
+}

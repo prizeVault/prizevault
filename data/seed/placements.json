@@ -1,0 +1,23 @@
+{
+  "name": "16-place open bracket table",
+  "source": "adapted from the payout curve the organiser used for the Spring 2026 event; row 13-16 shares were rounded to 0.75% so the table sums to 100.00%",
+  "unit": "basis points (1 bps = 0.01%)",
+  "placements": [
+    { "place": 1,  "bps": 3000, "label": "Champion" },
+    { "place": 2,  "bps": 1800, "label": "Runner-up" },
+    { "place": 3,  "bps": 1200, "label": "3rd" },
+    { "place": 4,  "bps": 900,  "label": "4th" },
+    { "place": 5,  "bps": 600,  "label": "5th-6th" },
+    { "place": 6,  "bps": 600,  "label": "5th-6th" },
+    { "place": 7,  "bps": 400,  "label": "7th-8th" },
+    { "place": 8,  "bps": 400,  "label": "7th-8th" },
+    { "place": 9,  "bps": 200,  "label": "9th-12th" },
+    { "place": 10, "bps": 200,  "label": "9th-12th" },
+    { "place": 11, "bps": 200,  "label": "9th-12th" },
+    { "place": 12, "bps": 200,  "label": "9th-12th" },
+    { "place": 13, "bps": 75,   "label": "13th-16th" },
+    { "place": 14, "bps": 75,   "label": "13th-16th" },
+    { "place": 15, "bps": 75,   "label": "13th-16th" },
+    { "place": 16, "bps": 75,   "label": "13th-16th" }
+  ]
+}

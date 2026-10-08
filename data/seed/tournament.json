@@ -1,0 +1,23 @@
+{
+  "name": "Autumn Invitational 2026 — Open Bracket",
+  "organizer_note": "tier-2 community organiser, Discord + Battlefy, 64 seats",
+  "token": "any SEP-41 token; deploy-testnet.sh wraps a fresh test asset (TUSD) as a Stellar Asset Contract and mints it to the sponsor. For real USDC on testnet, set TOKEN_CONTRACT_ID to the SAC address of Circle's testnet USDC issuer (look it up on Circle's docs; not hard-coded here).",
+  "token_decimals": 7,
+  "pool_required": "7777.7777777",
+  "pool_required_stroops": "77777777777",
+  "funding_tranches": [
+    "5000.0000000",
+    "2777.7777777"
+  ],
+  "placements_file": "placements.json",
+  "roster_file": "roster.json",
+  "results_file": "results.json",
+  "results_fixed_file": "results-fixed.json",
+  "deadlines": {
+    "register_by": "+7d",
+    "results_by": "+14d",
+    "claim_by": "+44d",
+    "note": "relative to tournament creation; the CLI accepts ISO-8601, unix seconds, or +Nd/+Nh"
+  },
+  "referee": "optional; deploy-testnet.sh generates a referee key when PRIZEVAULT_WITH_REFEREE=1"
+}

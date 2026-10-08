@@ -1,0 +1,16 @@
+[package]
+name = "prizevault"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Esports prize-pool escrow: proof of funds before registration, placement-table payouts, refund of unclaimed prizes"
+
+[lib]
+crate-type = ["cdylib"]
+doctest = false
+
+[dependencies]
+soroban-sdk = { workspace = true }
+
+[dev-dependencies]
+soroban-sdk = { workspace = true, features = ["testutils"] }

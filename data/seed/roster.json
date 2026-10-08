@@ -1,0 +1,431 @@
+{
+  "tournament": "Autumn Invitational 2026 — Open Bracket",
+  "game": "Valorant",
+  "format": "64-player single elimination, bo3 from quarter-finals",
+  "registered_via": "Battlefy export, 2026-09-28",
+  "players": [
+    {
+      "seat": 0,
+      "gamertag": "xXShadowStrikeXx",
+      "address": "GBF3R2AD6CVMLUM7WZ37BIPHEWU6RSHE5HZX3Y4LAU6I3ILMLCJ3H35G",
+      "region": "LatAm"
+    },
+    {
+      "seat": 1,
+      "gamertag": "n0scope_nate",
+      "address": "GBXTYLBFSDMQPD6MPSJZC3K5G7EXHRC2XI7F3JGQVQW2ADURGTT5RMOJ",
+      "region": "SEA",
+      "team": "FURY"
+    },
+    {
+      "seat": 2,
+      "gamertag": "Kirä",
+      "address": "GBCY4O3NJXCDER4MIAQF4LIRITBRMQFWUYKQOZTR6AXGBQAWGDYITXDQ",
+      "region": "MENA",
+      "team": "Nova"
+    },
+    {
+      "seat": 3,
+      "gamertag": "TTV_Blitzen",
+      "address": "GDV7JC7OGVQEKVKY2N7PBFH6LRMC6MAGOHSKYXUKG5AIKPVHVJGLQ3IB",
+      "region": "EU"
+    },
+    {
+      "seat": 4,
+      "gamertag": "PhantomLord ",
+      "address": "GAHUF3IOILVIGQ7D2XATIAQHA5CN4GYX262R2PQJ6QYSKFWH5DFJPCXI",
+      "region": "NA",
+      "team": "Quetzal"
+    },
+    {
+      "seat": 5,
+      "gamertag": "quietstorm",
+      "address": "GBKXFG2672GFTSGERVSXQ67TVPSCOMVXYGXEWFKTXSMVIE6FEFHUDNTM",
+      "region": "LatAm"
+    },
+    {
+      "seat": 6,
+      "gamertag": "Vortex.exe",
+      "address": "GB2CBOTW2Y3UUOHFLOIIAI4QBWMTCB3MPZVRHAGZ4Q7JY5I4YPO6FV6Z",
+      "region": "SEA",
+      "team": "Sandstorm"
+    },
+    {
+      "seat": 7,
+      "gamertag": "Mochi",
+      "address": "GBZDDY3THNNMQ3T3DOJPNXJ2MTXOILJ6OLXCWFHZMVSRN7XZXIRP6RL4",
+      "region": "BR",
+      "team": "Ronin"
+    },
+    {
+      "seat": 8,
+      "gamertag": " AceOfSpades",
+      "address": "GAIDV22GB4K6WCOWJIC5DT3UNLMZMJXHR232NMRKAGVJVDFQ7V6WJUMY",
+      "region": "LatAm"
+    },
+    {
+      "seat": 9,
+      "gamertag": "ZeroCool",
+      "address": "GDI5ZW5HFGDILORTRCXZVF4UR5UYOPJWDZAHR74AXXMQARRS2YN5CVGZ",
+      "region": "SEA",
+      "team": "Lunar"
+    },
+    {
+      "seat": 10,
+      "gamertag": "Liu_Kang94",
+      "address": "GBIOQJRMY5G3U5FB5FXM4LFPFKCDRZDRSNQ7RK3L4M2PBAMPCBQT3OYC",
+      "region": "MENA"
+    },
+    {
+      "seat": 11,
+      "gamertag": "pixelpirate",
+      "address": "GAF7SV6YWLFTAHWPY443Z6IKYECWZXODPQVPMABZBZOBZSK5XBNZPJPR",
+      "region": "EU",
+      "team": "FURY"
+    },
+    {
+      "seat": 12,
+      "gamertag": "Wraith",
+      "address": "GC6WGYXQYCWK2SSTTQWWUG75A4NVBL5DEBZOW3DR3KMV4I3TT46ANQZN",
+      "region": "NA",
+      "team": "Nova"
+    },
+    {
+      "seat": 13,
+      "gamertag": "SniperWolf",
+      "address": "GBCDQ6QDRB5HKT324VYGQRKCSIYGOSN7MCNJUE4OA72MHIIGV6IJZIEN",
+      "region": "LatAm"
+    },
+    {
+      "seat": 14,
+      "gamertag": "DR4G0N",
+      "address": "GDFFIKHUA4NISWNKTLI6RNXA4CJ224BYPQA5V7BXHGFJLVDWGWQX33FT",
+      "region": "SEA",
+      "team": "Quetzal"
+    },
+    {
+      "seat": 15,
+      "gamertag": "hollow_knight",
+      "address": "GD6VN3GNZLZDOOEYGCKF7G7WM4H3S4FP6JYHJM5ELOS7ZP4XNXIIPAEZ",
+      "region": "BR"
+    },
+    {
+      "seat": 16,
+      "gamertag": "GoblinSlayer",
+      "address": "GAE2CGXEHIAIOTW37Z7WABVIC6JWPUSBAU6RJ4A3HAQDFTBFRKRZXIFT",
+      "region": "LatAm",
+      "team": "Sandstorm"
+    },
+    {
+      "seat": 17,
+      "gamertag": "Nyx",
+      "address": "  GB4DV7NV3WE4B7X6XODT7QCO4J6N634VKCDIBWGAVBVZRMV3LITLXF3X ",
+      "region": "SEA",
+      "team": "Ronin"
+    },
+    {
+      "seat": 18,
+      "gamertag": "byte_me",
+      "address": "GBELYVFQTN2USZSONQFV6XQTW6A45EQEACAGTIBGDZY4MS2CBCKQKLIL",
+      "region": "MENA"
+    },
+    {
+      "seat": 19,
+      "gamertag": "El Matador",
+      "address": "GAZUVEIYNDWF3L63Y2FUUAGCA6N57Y7GGVXNBHX2OPMWR3UMMC5KMUXX",
+      "region": "EU",
+      "team": "Lunar"
+    },
+    {
+      "seat": 20,
+      "gamertag": "Sakura🌸",
+      "address": "GBMADT5VNY7F4HCDAGVIHSBDNC6B7AQDELGMU6IPT4FJJG6ZEX2YYQGX",
+      "region": "NA"
+    },
+    {
+      "seat": 21,
+      "gamertag": "Frostbite",
+      "address": "GAH7OENB6FPKB7ADF3KQMHRKNJGYJ7WBVHRHFS2YD7YJVS4XLGSBFSQS",
+      "region": "LatAm",
+      "team": "FURY"
+    },
+    {
+      "seat": 22,
+      "gamertag": "KING_KAI",
+      "address": "GBRBAXNMUO4UGCWXKBQIAAWH2ALMBYMTG6A6UL4XDKKT5K4EJR5UFFAT",
+      "region": "SEA",
+      "team": "Nova"
+    },
+    {
+      "seat": 23,
+      "gamertag": "lowkey",
+      "address": "GDHFHM4PINEWIMCY4KBRVGACKMKNTRX6YFLMEQHUCUX373FZNRTOKPS4",
+      "region": "BR"
+    },
+    {
+      "seat": 24,
+      "gamertag": "MrRobot",
+      "address": "GBIA2FEHQ57HPF6T7KIA5OTC3SAA6MYAJIJFQZPRXV4M2ATDZCZFTPEJ",
+      "region": "LatAm",
+      "team": "Quetzal"
+    },
+    {
+      "seat": 25,
+      "gamertag": "Valkyrie",
+      "address": "GBCGOCWCIWDRO7J3NI7GCBJ4XQN3W4N6OOHO2HF5JWZBO34CJCZG4BKW",
+      "region": "SEA"
+    },
+    {
+      "seat": 26,
+      "gamertag": "yeet_master",
+      "address": "GDORRD7D4TAU5ZZSQH5WFLSDGZOAZ6UEUBAPYQT6IJAV2KWH3UA3TV6A",
+      "region": "MENA",
+      "team": "Sandstorm"
+    },
+    {
+      "seat": 27,
+      "gamertag": "Tempest",
+      "address": "GA3ZEULT2TKFMDWMJTJGEJLKXJJNA2FNHQWTJDHIR23FV7UK34TUOPQJ",
+      "region": "EU",
+      "team": "Ronin"
+    },
+    {
+      "seat": 28,
+      "gamertag": "cs_toaster",
+      "address": "GCAANVCWIHM632HUP67B6HDJMOS4YREBOUO66QJHZVZ5F2LHXPF6BMZS",
+      "region": "NA"
+    },
+    {
+      "seat": 29,
+      "gamertag": "Havoc",
+      "address": "GADON4AXUKGTAKAMKNJH3EEEEC5QHGOL7KGA6NUSZUVURGC5QGGRLGSY",
+      "region": "LatAm",
+      "team": "Lunar"
+    },
+    {
+      "seat": 30,
+      "gamertag": "Bl4ze",
+      "address": "GD7MIJCBZ72K7ZV5ZQB5OFFX5L6GOIMSN3OGBQ4QQZCJESP6E24E2XJF",
+      "region": "SEA"
+    },
+    {
+      "seat": 31,
+      "gamertag": "Nightcrawler",
+      "address": "GBG2HETI7LU776TDDYJFD7DGCYVX3OV6APVFXBYEN6AD7E7BKQQNRFCD",
+      "region": "BR",
+      "team": "FURY"
+    },
+    {
+      "seat": 32,
+      "gamertag": "o7",
+      "address": "GAL2I3ID2DL2SI4T65S2FGBKI7VU3RS5TVYDXEMSESATSMNA3SQBT6TB",
+      "region": "LatAm",
+      "team": "Nova"
+    },
+    {
+      "seat": 33,
+      "gamertag": "Aria",
+      "address": "GASEC2UVSYG6UULF2NGWDXQN65UUUKH62NEQN55URTXOIR6BD7KW5IKQ",
+      "region": "SEA"
+    },
+    {
+      "seat": 34,
+      "gamertag": "SilentJ",
+      "address": "GDGOTSAPNDLLYKU7GRATHG4ZK45Z3VLMLSQXFRBQVTC3J5BMTBXHS3QG",
+      "region": "MENA",
+      "team": "Quetzal"
+    },
+    {
+      "seat": 35,
+      "gamertag": "Rogue_One",
+      "address": "GCZFB77GWK25A2SAC7VOTHN7SWFRQZZWSNOAHVBZGR72GEMTNLFW7RWX",
+      "region": "EU"
+    },
+    {
+      "seat": 36,
+      "gamertag": "Marauder",
+      "address": "GBYGMUB5W4N2AEQKFLKFCWSBQSY3EJ6HKTSI6YZZLQCJHQ2WJV43P7IM",
+      "region": "NA",
+      "team": "Sandstorm"
+    },
+    {
+      "seat": 37,
+      "gamertag": "Yuki",
+      "address": "GCJGI676X32SVY2V73QRS3FMVKKTLOCWPYWTSJXOZM37KXPFN4W55U5T",
+      "region": "LatAm",
+      "team": "Ronin"
+    },
+    {
+      "seat": 38,
+      "gamertag": "Taco  Tuesday",
+      "address": "GB3ZZT7GCOKTD7KJRQT7PZYU7SVKMDANNOKQM6SWT34JL3LIXHI2UMTB",
+      "region": "SEA"
+    },
+    {
+      "seat": 39,
+      "gamertag": "Ghost",
+      "address": "GA3JYY723CMVK5WVHEODCWHRG43HHEQGHXHPTDW3Y6J2HCNTAQA42EIO",
+      "region": "BR",
+      "team": "Lunar"
+    },
+    {
+      "seat": 40,
+      "gamertag": "Prime",
+      "address": "GBVPUGIUPCRJH2CULSUIRW4P4UOSMKAFNDPL7SG2KGM7DII5UNBK3MXD",
+      "region": "LatAm",
+      "note": "requested payout to a different wallet by DM; ignored, only the registered address can claim"
+    },
+    {
+      "seat": 41,
+      "gamertag": "iceberg",
+      "address": "GBSCXINXJW6M3VHYM7LP5BAIYQAHLE2MQ4AH5GHRW6E53GB4UW7UYQBF",
+      "region": "SEA",
+      "team": "FURY"
+    },
+    {
+      "seat": 42,
+      "gamertag": "Kraken",
+      "address": "GCIZTMNUGWH5V366MKG6HJPGFF2V4ZDG3WU6JQWDQ4ZQQC5RENFPRJTI",
+      "region": "MENA",
+      "team": "Nova"
+    },
+    {
+      "seat": 43,
+      "gamertag": "Nemesis",
+      "address": "GCOUKQRKOYIQMV3NOAGKJ27YSN6ATEPV7DZTOY3DRNHOABPEZQRFA6ZB",
+      "region": "EU"
+    },
+    {
+      "seat": 44,
+      "gamertag": "Pyro",
+      "address": "GDD6YIUEPE2TAKPBVYV2DDNTDCCCYU4WV2NQCE43Q2SSVVXAL4FKOYRS",
+      "region": "NA",
+      "team": "Quetzal"
+    },
+    {
+      "seat": 45,
+      "gamertag": "Mango",
+      "address": "GB4JZVATIVLYL354WN7RV3SIYSXXYZLFQYEKKQV377XJU3TGXLBQHCGZ",
+      "region": "LatAm"
+    },
+    {
+      "seat": 46,
+      "gamertag": "Zed",
+      "address": "GCYZYMI26HWOTNKGR3TORJIBKZW5LLKW36WRS3RBYZOT7O4RV6ESX7G2",
+      "region": "SEA",
+      "team": "Sandstorm"
+    },
+    {
+      "seat": 47,
+      "gamertag": "Ω-mega",
+      "address": "GA7URXT7YAWAHE4KIW6XIDLC7GFCTIOXNCBXY2PDRYDVJ5C34B3XYRXB",
+      "region": "BR",
+      "team": "Ronin"
+    },
+    {
+      "seat": 48,
+      "gamertag": "Neo",
+      "address": "GARBEKZNTPCBDYW2Z3N3FZKUU2CPKA4YVQPOIFAACLNRAKEZQW7YBCSZ",
+      "region": "LatAm"
+    },
+    {
+      "seat": 49,
+      "gamertag": "Bane",
+      "address": "GCN2MMNLEZ7KC7WFUGLGEQTISVIPADEJJ5FA4OIX62XZHUXCPRNDB4YE",
+      "region": "SEA",
+      "team": "Lunar"
+    },
+    {
+      "seat": 50,
+      "gamertag": "Echo",
+      "address": "GCNCTZZZ2GENHFJTFNKDDEE4OICVOWQK7BDJ7NDHYPSF6XLYHLH5V6FI",
+      "region": "MENA"
+    },
+    {
+      "seat": 51,
+      "gamertag": "Ludwig",
+      "address": "GAZUZGUC3ZZ4RXPPOHUVFHGFHUGTHTZ4CODC4A27L5VBWQS3ROU46UJQ",
+      "region": "EU",
+      "team": "FURY"
+    },
+    {
+      "seat": 52,
+      "gamertag": "Hex",
+      "address": "GA47RJ4BZZ52EERHJCFXRZZ3DQLDPVVHHP2I3OLR4EYRKSGXFGWB25LT",
+      "region": "NA",
+      "team": "Nova"
+    },
+    {
+      "seat": 53,
+      "gamertag": "Orion",
+      "address": "GCTYZBJZABM7QXIBE4KC2ZCMVEJ67MDO3QKXHEN73N2GWCYEFM7EIUHA",
+      "region": "LatAm"
+    },
+    {
+      "seat": 54,
+      "gamertag": "Apex",
+      "address": "GCKT47TTM2WPDX5T5VWC5FP3OEFGPEKAUFHXJJNR2FPRIJUKI63GZEUY",
+      "region": "SEA",
+      "team": "Quetzal"
+    },
+    {
+      "seat": 55,
+      "gamertag": "Juno",
+      "address": "GC3C4OAPTE7HZT5K22PG33LBPBXWEOXA2JTREMU3MBYRWTKOG5JVYNZD",
+      "region": "BR"
+    },
+    {
+      "seat": 56,
+      "gamertag": "Rico",
+      "address": "GAAPG4NYTKN4VO6JTCJHQCDLHMICMPSIPG5P56ISJQARQAYWXBXLX2EB",
+      "region": "LatAm",
+      "team": "Sandstorm"
+    },
+    {
+      "seat": 57,
+      "gamertag": "Spectre",
+      "address": "GDWW35VPM66LTSOL6GAKUHOSL3NTDN74ZUR6WOKZ7FTL7IN6RF6QGNKE",
+      "region": "SEA",
+      "team": "Ronin"
+    },
+    {
+      "seat": 58,
+      "gamertag": "Vex",
+      "address": "GALLQZTAHNKWCVOMAYTD3RODDF7Q2YAABWGJ3OZHFIDLSYRNMI7VEVM2",
+      "region": "MENA"
+    },
+    {
+      "seat": 59,
+      "gamertag": "Wolfie",
+      "address": "GATFTD4TJIXBF6EFDWG5IDEYTGRMHCWPGIGOLNMOAH73FKDER2HFM2PH",
+      "region": "EU",
+      "team": "Lunar"
+    },
+    {
+      "seat": 60,
+      "gamertag": "Xeno",
+      "address": "GA475M47HPI5UIEJWO73MS2OPCRQVPF547FT7MYHG3FTEJQRDDUOPKXB",
+      "region": "NA"
+    },
+    {
+      "seat": 61,
+      "gamertag": "Yara",
+      "address": "GD6AMMKLHYYKKUGYUL5QHMD22FE6AVI6UXAFGRJLBXLOUN3RKN3MFUCZ",
+      "region": "LatAm",
+      "team": "FURY"
+    },
+    {
+      "seat": 62,
+      "gamertag": "ghost",
+      "address": "GAKC6Y5AD3SSHMS2G263WJFCC4VM7VXQ7YKOMT5T6GTRCSXAOE7M5X45",
+      "region": "SEA",
+      "team": "Nova"
+    },
+    {
+      "seat": 63,
+      "gamertag": "Zulu",
+      "address": "GDH75Y43MAFDA7JYN64XGZWTUSS464HZPKDMBY3T4U4BLVFEQ7SFEOHD",
+      "region": "BR"
+    }
+  ]
+}

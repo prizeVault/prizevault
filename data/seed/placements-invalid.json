@@ -1,0 +1,22 @@
+{
+  "name": "first draft of the table, copied from a percentage sheet with 0.1% rounding",
+  "note": "sums to 9,990 bps (99.90%), so the contract must reject it",
+  "placements": [
+    { "place": 1, "bps": 3000 },
+    { "place": 2, "bps": 1800 },
+    { "place": 3, "bps": 1200 },
+    { "place": 4, "bps": 900 },
+    { "place": 5, "bps": 600 },
+    { "place": 6, "bps": 600 },
+    { "place": 7, "bps": 400 },
+    { "place": 8, "bps": 400 },
+    { "place": 9, "bps": 200 },
+    { "place": 10, "bps": 200 },
+    { "place": 11, "bps": 200 },
+    { "place": 12, "bps": 200 },
+    { "place": 13, "bps": "70" },
+    { "place": 14, "bps": 70 },
+    { "place": 15, "bps": 70 },
+    { "place": 16, "bps": 80 }
+  ]
+}
