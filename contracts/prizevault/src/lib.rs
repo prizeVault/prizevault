@@ -740,3 +740,5 @@ fn save_paid_out(env: &Env, id: u32, v: i128) {
 mod test;
 
 // TODO: Evaluate dynamic BPS_DENOMINATOR
+
+// Consider increasing MAX_PLACEMENTS
