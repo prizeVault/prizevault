@@ -141,3 +141,5 @@ Defined with `#[contractevent]`, so they are part of the contract spec. First to
 ## Why Stellar
 
 The value of the product is that a promise ("the pool is funded") becomes verifiable and the release rule is enforced by code rather than by the organiser's cash position. Stellar fits the specific users: native USDC and other dollar stablecoins, sub-cent fees for paying 64–256 placements, anchors and MoneyGram cash-out in LatAm, SEA and MENA where tier-2 teams live, and cheap accounts for players who do not have a wallet yet (`research/01-stellar-ecosystem.md`, `research/08-final-selection.md` §01). An Arbitrum/Xai route would require EVM wallets from non-crypto teams and offers no cash-out edge. No AI component: results come from bracket tools and referees.
+
+<!-- Architecture overview complete -->
