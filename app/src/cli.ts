@@ -217,3 +217,5 @@ const invokedDirectly = (() => {
 if (invokedDirectly) {
   main(process.argv.slice(2)).then((code) => process.exit(code));
 }
+
+// Entry point for the CLI tool
