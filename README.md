@@ -109,3 +109,5 @@ DEMO.md                    exact commands and expected output
 ## Status
 
 **functional locally** (contract verified by `cargo test` in the Soroban host, wasm built, CLI and page tested offline); deployment scripts are **testnet-ready** but were not executed here. No external users, no deployment, no measured metrics yet.
+
+<!-- Managed by PrizeVault Contributors -->
