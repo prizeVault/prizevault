@@ -137,3 +137,5 @@ node --env-file=.env.testnet src/cli.ts refund --id 0
 `register_by` must have passed before `results` is accepted (`RegistrationStillOpen` otherwise); for a fast demo create the tournament with `--register-by +10m --results-by +1h --claim-by +2h` instead of the seed deadlines. The seed roster addresses are synthetic and cannot sign, so on testnet real player keys register first and the results file lists those.
 
 Expected on-chain outcome, mirroring section 1: every claim is a token transfer to the winner, `paid_out` grows with each claim, and `refund` returns `pool_funded - paid_out` to the sponsor and sets the state to `Closed`.
+
+<!-- Demo script verified -->
